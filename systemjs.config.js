@@ -25,6 +25,7 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+      'angular2-notifications': 'node_modules/angular2-notifications',
 
       // other libraries
       'rxjs':                      'npm:rxjs',
@@ -38,6 +39,10 @@
       },
       rxjs: {
         defaultExtension: 'js'
+      },
+      'angular2-notifications': { 
+        main: 'components.js', 
+        defaultExtension: 'js' 
       }
     }
   });

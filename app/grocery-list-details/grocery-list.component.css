@@ -1,0 +1,11 @@
+.row.list-header{
+    background-color:rgb(1.8%, 97.2%, 34.1%);
+    border: solid 1.5px black;
+    font-size: 1.5em;
+}
+
+.row.list-body{
+    background-color: rgb(96.8%, 85.8%, 67.2%);
+    border: solid 1px black;
+    font-size: 1.5em;
+}

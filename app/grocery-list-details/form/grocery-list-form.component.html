@@ -1,0 +1,46 @@
+<h2>Update your items here</h2>
+
+<h3>Passing data to Parent through KeyUp event </h3>
+<input #keyupitem (keyup)="onKey(keyupitem.value)">
+
+<div *ngIf = "item">
+        <h3>Edit item no {{item.id}}</h3>
+        <form>
+        <div class= "form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="item.name" name="name" #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Name is required
+            </div>
+        </div>  
+        <div class= "form-group">   
+            <label for="quantity">Qty</label>
+            <input type="text" class="form-control" id="quantity" [(ngModel)]="item.quantity" name="quantity">
+        </div>
+        <div class= "form-group">   
+            <label for="measurements">Measurement</label>
+            <select class="form-control" id="measurement" [(ngModel)]="item.measurement" name="measurement" #measurement="ngModel">
+            <option *ngFor="let mmt of measurements" [value]="mmt">{{mmt}}</option>
+            </select>
+        </div>
+        </form>
+</div>
+
+        <h3>Add Item</h3>
+        <form [formGroup]="addItemsForm" (ngSubmit)="addItem($event)">
+        <div class= "form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name" required>
+        </div>  
+        <div class= "form-group">   
+            <label for="quantity">Qty</label>
+            <input type="text" formControlName="quantity" class="form-control" id="quantity">
+        </div>
+        <div class= "form-group">   
+            <label for="measurements">Measurement</label>
+            <select class="form-control" formControlName="measurement" id="measurement">
+            <option *ngFor="let mmt of measurements" [value]="mmt">{{mmt}}</option>
+            </select>
+        </div>
+            <button type="submit" class="btn btn-success">Add Item</button>
+        </form>
